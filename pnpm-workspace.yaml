@@ -5,3 +5,7 @@ allowBuilds:
   '@scarf/scarf': false
   '@swc/core': true
   esbuild: true
+
+# Only install versions that have been published for at least 2 days,
+# so a broken or compromised release has time to be caught first.
+minimumReleaseAge: 2880

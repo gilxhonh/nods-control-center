@@ -4,7 +4,7 @@
   "description": "Nods Control Center: one place to monitor and manage scraping operations.",
   "packageManager": "pnpm@12.14.0",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "turbo run dev",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",
-    "@types/node": "^26.6.5",
+    "@types/node": "^24.19.2",
     "turbo": "^2.11.9",
     "typescript": "^6.0.3"
   }

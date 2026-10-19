@@ -22,7 +22,7 @@ docs/adr/     Architecture decision records
 
 ## Getting started
 
-Requirements: Node 22+, pnpm 12, Docker.
+Requirements: Node 24 LTS (see `.nvmrc`), pnpm 12 via Corepack (`corepack enable`), Docker.
 
 ```bash
 pnpm install
@@ -45,6 +45,12 @@ Open http://localhost:5173. The API health check is at http://localhost:3000/api
 | `pnpm lint` / `pnpm format` | Biome lint and format |
 | `pnpm db:generate` | Creates a migration from schema changes |
 | `pnpm db:migrate` | Applies migrations |
+
+## Dependency policy
+
+- Node: 24 LTS for now. Switch to Node 26 when it enters LTS on 28 Oct 2026 (Node 24 moves to maintenance on 20 Oct).
+- pnpm only installs versions published at least 2 days ago (`minimumReleaseAge` in `pnpm-workspace.yaml`), so brand-new releases are skipped until they settle.
+- TypeScript stays on 6.x until the Nest CLI supports TypeScript 7 (expected with 7.1).
 
 ## Rules
 
