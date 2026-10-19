@@ -4,6 +4,8 @@ One place to monitor and manage our scraping operations: runs, deliveries, ticke
 
 The clickable design reference lives in [`prototype/index.html`](prototype/index.html). Stack decisions are in [`docs/adr`](docs/adr).
 
+Planning: [`docs/ROADMAP.md`](docs/ROADMAP.md) (phases and working method), [`docs/modules.md`](docs/modules.md) (module boundaries), [`docs/tasks`](docs/tasks) (backlog), [`docs/HANDOFF.md`](docs/HANDOFF.md) (where the last session stopped). AI sessions start from [`CLAUDE.md`](CLAUDE.md).
+
 ## Structure
 
 ```
