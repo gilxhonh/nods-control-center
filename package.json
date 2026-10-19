@@ -1,0 +1,26 @@
+{
+  "name": "nods-control-center",
+  "private": true,
+  "description": "Nods Control Center: one place to monitor and manage scraping operations.",
+  "packageManager": "pnpm@12.14.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "db:up": "docker compose up -d postgres",
+    "db:generate": "pnpm --filter @ncc/db generate",
+    "db:migrate": "pnpm --filter @ncc/db migrate"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@types/node": "^26.6.5",
+    "turbo": "^2.11.9",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ncc
+      POSTGRES_PASSWORD: ncc
+      POSTGRES_DB: ncc
+    ports:
+      - "5432:5432"
+    volumes:
+      - ncc-pg:/var/lib/postgresql/data
+volumes:
+  ncc-pg:

@@ -1,0 +1,6 @@
+{
+  "extends": "@ncc/tsconfig/nest.json",
+  "compilerOptions": { "rootDir": "src", "outDir": "dist" },
+  "include": ["src"],
+  "exclude": ["src/**/*.spec.ts"]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@ncc/sources",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Read-only clients for the systems Nods Control Center sits on top of.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@ncc/tsconfig": "workspace:*",
+    "@types/node": "^26.6.5"
+  },
+  "dependencies": {
+    "postgres": "^3.4.9"
+  }
+}
