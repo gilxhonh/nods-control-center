@@ -1,4 +1,7 @@
+import { existsSync } from 'node:fs'
 import { defineConfig } from 'drizzle-kit'
+
+for (const f of ['.env', '../../.env']) if (existsSync(f)) process.loadEnvFile(f)
 
 export default defineConfig({
   schema: './src/schema.ts',
