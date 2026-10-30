@@ -29,6 +29,9 @@ Update the "Latest" section at the end of every session. Move the previous one i
   vocabulary, Jira project map and the hosting ticket (EDO-2313). It contradicts parts of
   `docs/modules.md`; read it before the segment/RBAC work.
 
+- `docs/sources/e3-delivery-data.md` — schema of the e3-delivery Postgres (the master request DB),
+  mapped to modules. Use it for the `createMasterRequestSource` TODO.
+
 **Decisions**
 - **Retail only for v1.** Managed Services and Brand clients exist in the same source systems but are
   out of scope; `business_line` is an unconditional filter, not a segment switcher. See `docs/modules.md`.

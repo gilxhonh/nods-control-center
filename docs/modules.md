@@ -34,7 +34,7 @@ Revised 2026-10-30 from `docs/research/2026-10-30-org-segments-and-sources.md`. 
 - **e3-delivery** Postgres — `e3-delivery-data`
 - **Snowflake** — holds the crawl requests (`MISSION.ONLINE_CRAWL_REQUESTS(from, to)`: `request_name`, `banner_name`, `crawl_type`, `crawl_frequency`, `crawl_start_utc`, `delivery_utc`, `client_id`, `order_active`) and linking (`link.links_family`).
 
-Which of the three is "the master request DB" in `CLAUDE.md` is still open. **NODS is network-restricted** (403 from outside the corporate network), so agent-owner data needs the VM or VPN.
+The "master request DB" in `CLAUDE.md` is **e3-delivery** (`master_request`, `weekly_request`, `config_db`, ...); its schema and table-to-module map are in `docs/sources/e3-delivery-data.md`. **NODS is network-restricted** (403 from outside the corporate network), so agent-owner data needs the VM or VPN.
 
 The business hierarchy is **client → banner → store set / product set**, not client → domain. Banner is the business unit, domain is the crawl unit; the `clients` and `domains` modules need both and a mapping between them.
 
