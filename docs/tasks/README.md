@@ -10,3 +10,4 @@ One file per phase. Status: `todo`, `doing`, `done`, `blocked`. Pick the lowest-
 | [phase-3-runs-coverage.md](phase-3-runs-coverage.md) | 3. Runs, coverage, baselines |
 | [phase-4-deliveries.md](phase-4-deliveries.md) | 4. Deliveries + MVP pilot |
 | [later-phases.md](later-phases.md) | 5 to 12 (epics, broken down when we get there) |
+| [plan-2026-11-13.md](plan-2026-11-13.md) | Current two-week plan (2 to 13 Nov) and decisions for Olsi |

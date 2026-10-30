@@ -17,7 +17,9 @@ Update the "Latest" section at the end of every session. Move the previous one i
 - Nothing.
 
 **Next**
-- NCC-002 (logging), NCC-003 (error filter), NCC-004 (modules layout); see `docs/tasks/phase-0-foundations.md`.
+- Two-week plan, Mon 2 to Fri 13 Nov (deadline from Olsi): a working end-to-end slice, real retail Domains from
+  `e3-delivery-data` behind a dev login. Day-by-day schedule and the decisions Olsi owns (DEC-01..09) are in
+  `docs/tasks/plan-2026-11-13.md`; work is tracked in Jira space `RDIT`.
 
 **Blockers / waiting on**
 - Unchanged from 2026-10-19 below (source access, hosting, Entra ID app registration).
