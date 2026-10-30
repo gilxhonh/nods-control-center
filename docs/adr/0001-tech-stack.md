@@ -20,7 +20,7 @@ It is an internal tool that will grow module by module (domains, runs, deliverie
 - **Validation: zod**, shared between frontend and API through `@ncc/shared`.
 - **Auth: company sign-in over OIDC**, with role and client-segment scoping enforced in API guards.
 - **Tooling:** Biome (lint + format), Vitest, GitHub Actions. Observability through Prometheus metrics into the existing Grafana, plus Sentry.
-- **Node 24 LTS.** It moves to maintenance on 20 Oct 2026; switch to Node 26 when it enters LTS on 28 Oct 2026.
+- **Node 26 LTS.** Switched from Node 24 on 30 Oct 2026, two days after 26 entered LTS; Node 24 went to maintenance on 20 Oct 2026.
 - **Latest stable dependencies with a 2-day buffer:** pnpm's `minimumReleaseAge` only accepts versions published at least 2 days ago.
 - **TypeScript 6.** TypeScript 7 does not yet expose the compiler API the Nest CLI needs (expected in 7.1). Upgrade when it does.
 

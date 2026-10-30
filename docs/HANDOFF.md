@@ -5,6 +5,8 @@ Update the "Latest" section at the end of every session. Move the previous one i
 ## Latest (2026-10-19)
 
 **Done**
+- Node 26 LTS (26.13.0): `.nvmrc`, `engines`, `@types/node` ^26.6.5, docs. Lint, build, typecheck and test pass on Node 26.
+  Node 26 no longer bundles Corepack: run `npm install -g corepack && corepack enable` once.
 - Monorepo scaffolded (web, api, worker, shared, db, sources), CI, Docker Postgres, ADR 0001.
 - Dependencies on latest stable (2-day release-age buffer), Node 24 LTS.
 - First migration (8 tables). `pnpm db:migrate` now prints the real error on failure.

@@ -14,7 +14,7 @@ An internal web app that gives delivery engineers, delivery managers, CSMs and t
 - Keep diffs minimal and focused on the task. No drive-by refactors.
 
 ## Stack
-pnpm 12 + Turborepo, Node 24 LTS, TypeScript 6 (not 7 until the Nest CLI supports it).
+pnpm 12 + Turborepo, Node 26 LTS, TypeScript 6 (not 7 until the Nest CLI supports it).
 - `apps/api`: NestJS 12 on Fastify, zod validation via `ZodValidationPipe`, Swagger at `/api/docs`
 - `apps/worker`: NestJS standalone app, `@nestjs/schedule` + pg-boss
 - `apps/web`: React 19 + Vite, TanStack Router/Query/Table, Tailwind 4, shadcn/ui

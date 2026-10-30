@@ -24,7 +24,7 @@ docs/adr/     Architecture decision records
 
 ## Getting started
 
-Requirements: Node 24 LTS (see `.nvmrc`), pnpm 12 via Corepack (`corepack enable`), Docker.
+Requirements: Node 26 LTS (see `.nvmrc`), pnpm 12 via Corepack, Docker. Node 26 no longer bundles Corepack, so install it once: `npm install -g corepack && corepack enable`.
 
 ```bash
 pnpm install
@@ -50,7 +50,7 @@ Open http://localhost:5173. The API health check is at http://localhost:3000/api
 
 ## Dependency policy
 
-- Node: 24 LTS for now. Switch to Node 26 when it enters LTS on 28 Oct 2026 (Node 24 moves to maintenance on 20 Oct).
+- Node: 26 LTS, since it entered LTS on 28 Oct 2026. Node 24 is in maintenance until April 2028.
 - pnpm only installs versions published at least 2 days ago (`minimumReleaseAge` in `pnpm-workspace.yaml`), so brand-new releases are skipped until they settle.
 - TypeScript stays on 6.x until the Nest CLI supports TypeScript 7 (expected with 7.1).
 
