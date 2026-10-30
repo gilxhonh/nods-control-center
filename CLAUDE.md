@@ -29,7 +29,7 @@ pnpm 12 + Turborepo, Node 26 LTS, TypeScript 6 (not 7 until the Nest CLI support
 - Module layout follows `docs/modules.md`. One NestJS module per product area; the web app mirrors it under `apps/web/src/features/<module>`.
 - Business rules (status, coverage, delivery projection) live in `packages/shared/src/rules` with unit tests, never inline in controllers or components.
 - Schema change = edit `packages/db/src/schema.ts`, run `pnpm db:generate`, commit the migration.
-- Branch per task: `feat/NCC-012-domain-list`. Commit messages say why, not just what.
+- Branch per task from `develop`: `feat/NCC-012-domain-list`, PR back into `develop`. `main` only gets releases from `develop`; never commit to it directly. Commit messages say why, not just what.
 - A task is done when its acceptance criteria pass, `pnpm lint build typecheck test` is green, and `docs/tasks` + `docs/HANDOFF.md` are updated.
 
 ## End of every session
