@@ -22,7 +22,14 @@ Update the "Latest" section at the end of every session. Move the previous one i
 - Mozenda API key, Jira API token (OPS project), Slack bot token.
 - Hosting target and SSO provider.
 
+**Research**
+- `docs/research/2026-10-30-org-segments-and-sources.md` — org chart, business lines, retail domain
+  vocabulary, Jira project map and the hosting ticket (EDO-2313). It contradicts parts of
+  `docs/modules.md`; read it before the segment/RBAC work.
+
 **Decisions**
+- **Retail only for v1.** Managed Services and Brand clients exist in the same source systems but are
+  out of scope; `business_line` is an unconditional filter, not a segment switcher. See `docs/modules.md`.
 - No custom MCP server for project context for now: CLAUDE.md + this file + task files in the repo, GitHub Issues later. See ROADMAP "Working method".
 
 ## History
