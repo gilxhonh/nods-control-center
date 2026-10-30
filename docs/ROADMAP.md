@@ -26,11 +26,13 @@ Phases 1 and 0 run in parallel: access requests take time, so ask on day one.
 ## Working method
 
 ### Source of truth for tasks
-- **Status lives in Jira**, space `RDIT` (Retail Dashboard For Integration Team). One Jira task per NCC task, summary
-  prefixed with the NCC ID, labels `phase-N`, `module-<name>`, `size-S|M|L`, `blocked`, `plan-<date>`; decisions are
-  `DEC-##` tasks labelled `decision`. Created 2026-10-30 through Rovo, not by tools in this repo.
-- **Definitions live in the repo**: `docs/tasks/phase-*.md` holds each task's ID, module, size, dependencies, acceptance
-  criteria and Jira key. Change a task's scope here, its status in Jira.
+- **One ID convention: the Jira key** (`RDIT-##`) is the task ID in Jira, the task files, branches
+  (`feat/RDIT-24-domain-list`), commits and PR titles (`RDIT-24: ...`).
+- **Status lives in Jira**, space `RDIT` (Retail Dashboard For Integration Team). Labels `phase-N`, `module-<name>`,
+  `size-S|M|L`, `blocked`, `plan-<date>`; decisions for Olsi are labelled `decision`. Created 2026-10-30 through Rovo,
+  not by tools in this repo.
+- **Definitions live in the repo**: `docs/tasks/phase-*.md` holds each task's module, size, dependencies and acceptance
+  criteria. Change a task's scope here, its status in Jira.
 - Claude Code does not read Jira (company policy is unconfirmed), so it learns status from the user and from HANDOFF.
   This replaces the earlier plan to move tasks to GitHub Issues.
 

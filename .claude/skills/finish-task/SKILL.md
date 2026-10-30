@@ -5,7 +5,7 @@ description: Finish a Nods Control Center task or session. Runs the full check (
 
 # Finish a task
 
-Works on the current branch. The task ID comes from the argument, else the branch name (`feat/NCC-xxx-...`). Look up its Jira key in the Jira column of `docs/tasks/*.md`. Status lives in Jira (space `RDIT`), which you cannot read or write: never edit the task files for status. With no task (a session that only did research or docs), skip step 4 and the Jira line in step 8, and still do the rest.
+Works on the current branch. The task key (`RDIT-##`) comes from the argument, else the branch name (`feat/RDIT-5-...`). Status lives in Jira, which you cannot read or write: never edit the task files for status. With no task (a session that only did research or docs), skip step 4 and the Jira line in step 8, and still do the rest.
 
 1. **Check.** Run `pnpm lint build typecheck test`. If anything fails, fix it if the fix is inside the task; otherwise stop and report the failing output. Never call a task done on red.
 2. **Schema.** If `packages/db/src/schema.ts` changed, confirm a migration was generated (`pnpm db:generate`) and is staged.
@@ -14,6 +14,6 @@ Works on the current branch. The task ID comes from the argument, else the branc
 5. **Docs.**
    - Rewrite the "Latest" section of `docs/HANDOFF.md`: date (today), Done, In progress, Next, Blockers / waiting on, Decisions. Move the previous "Latest" into "History" and keep only the last 5 there.
    - A decision with lasting trade-offs gets an ADR in `docs/adr`.
-6. **Commit.** Stage only files this task touched (check `git status`; never `.env` or anything under `.claude/worktrees`). Message says why, not just what, and names the task ID and Jira key (`NCC-005 / RDIT-5: ...`).
-7. **PR.** `git push -u origin HEAD`, then `gh pr create --base develop --draft` with title `NCC-xxx / RDIT-##: <task>` and a body listing: what changed and why, how each acceptance criterion was verified, open review findings, follow-ups. Never target `main`, never force-push.
+6. **Commit.** Stage only files this task touched (check `git status`; never `.env` or anything under `.claude/worktrees`). Message starts with the key (`RDIT-5: ...`) and says why, not just what.
+7. **PR.** `git push -u origin HEAD`, then `gh pr create --base develop --draft` with title `RDIT-5: <task>` and a body listing: what changed and why, how each acceptance criterion was verified, open review findings, follow-ups. Never target `main`, never force-push.
 8. **Report** the PR URL, which Jira ticket to move and to what (Done once the PR merges, In Progress or `blocked` with the reason otherwise), and what is next per the new HANDOFF.

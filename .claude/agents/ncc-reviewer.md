@@ -21,7 +21,7 @@ Check every change against these:
    - filters `business_line` to retail unconditionally (v1 is retail only);
    - scopes delivery engineers and managers by pod and domain assignment, CSMs by `csm_clients`, as `docs/modules.md` describes;
    - takes scope from the session (`@CurrentUser()`), never from a request parameter;
-   - goes through the shared scoping helper once it exists (NCC-006), not a hand-written WHERE.
+   - goes through the shared scoping helper once it exists (RDIT-7), not a hand-written WHERE.
    Hiding data only in the web app is a finding.
 3. **Every write is audited.** Each insert/update/delete in our own DB records actor, action, entity and before/after in `audit_log` through the audit service.
 4. **Business rules live in `packages/shared/src/rules`** with unit tests. Status, coverage, threshold or delivery-projection logic inside a controller, service or component is a finding.

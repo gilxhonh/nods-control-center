@@ -5,34 +5,36 @@ Update the "Latest" section at the end of every session. Move the previous one i
 ## Latest (2026-10-30)
 
 **Done**
-- NCC-001: api and worker validate env at startup with zod (`packages/shared/src/env.ts`, wired through
+- RDIT-2: api and worker validate env at startup with zod (`packages/shared/src/env.ts`, wired through
   `ConfigModule.forRoot({ validate })`). A missing or bad variable prints "Invalid environment:" with one
   line per variable and exits 1. Schemas only cover what each app reads today (api: `DATABASE_URL`,
   `API_PORT`, `WEB_ORIGIN`; worker: `DATABASE_URL`). The worker now refuses to start without a database.
 - Claude Code tooling in `.claude/`: `ncc-reviewer` agent (read-only review against the hard rules), `start-task` and `finish-task` skills. `.claude/worktrees/` and `settings.local.json` are now ignored.
 - `.gitattributes` checks out text files with LF, so `pnpm lint` passes on Windows. Existing checkouts: run
   `git rm -r --cached -q . && git reset --hard` once on a clean tree.
-- Jira space `RDIT` holds the whole backlog: RDIT-1..47 are the 47 NCC tasks (key per task in the Jira column of
-  `docs/tasks/*.md`), RDIT-48..56 are DEC-01..09. All unassigned; RDIT-2 (NCC-001) Done, RDIT-8 (NCC-002) In Progress.
+- Jira space `RDIT` holds the whole backlog: RDIT-1..47 are build tasks, RDIT-48..56 are decisions for Olsi
+  (label `decision`). All unassigned; RDIT-2 (env validation) Done, RDIT-8 (logging) In Progress.
+- One ID convention: task IDs are the Jira keys in the repo, branches, commits and PRs. The old NCC-###/DEC-## IDs
+  are gone (they only survive in older commit messages and PR titles).
 
 **In progress**
-- NCC-002 / RDIT-8: PR #6 open. Move RDIT-8 to Done when it merges.
+- RDIT-8 (logging): PR #6 open. Move RDIT-8 to Done when it merges.
 
 **Next**
 - Two-week plan, Mon 2 to Fri 13 Nov (deadline from Olsi): a working end-to-end slice, real retail Domains from
-  `e3-delivery-data` behind a dev login. Day-by-day schedule and the decisions Olsi owns (DEC-01..09) are in
+  `e3-delivery-data` behind a dev login. Day-by-day schedule and the decisions Olsi owns (RDIT-48..56) are in
   `docs/tasks/plan-2026-11-13.md`; work is tracked in Jira space `RDIT`.
 
-  First on Mon 2 Nov: send the DEC tasks to Olsi (they are unassigned; assign RDIT-48..56 to him in Jira or raise them
-  in person), then NCC-003 / RDIT-6.
+  First on Mon 2 Nov: send the decision tasks to Olsi (they are unassigned; assign RDIT-48..56 to him in Jira or raise
+  them in person), then RDIT-6 (error filter).
 
 **Blockers / waiting on**
-- Unchanged from 2026-10-19 below (source access, hosting, Entra ID app registration), now tracked as DEC-02..04.
+- Unchanged from 2026-10-19 below (source access, hosting, Entra ID app registration), now tracked as RDIT-49..51.
 
 **Decisions**
 - Nest's `abortOnError` is off in both `main.ts` files so startup errors exit with code 1, not `process.abort()`.
-- `parseEnv` is tested from `apps/api/src/env.spec.ts` until NCC-011 gives `packages/shared` its own Vitest.
-- **Status lives in Jira (`RDIT`), definitions in the repo.** The task tables' Status column became a Jira column.
+- `parseEnv` is tested from `apps/api/src/env.spec.ts` until RDIT-11 gives `packages/shared` its own Vitest.
+- **Status lives in Jira (`RDIT`), definitions in the repo.** Task IDs are the Jira keys.
   Claude Code does not read Jira; the skills tell the user which ticket to move. See ROADMAP "Working method".
 
 ## History
@@ -51,7 +53,7 @@ Update the "Latest" section at the end of every session. Move the previous one i
 - Nothing.
 
 **Next**
-- Phase 0 tasks NCC-001 to NCC-010 (`docs/tasks/phase-0-foundations.md`).
+- Phase 0 tasks RDIT-1 to RDIT-10 (`docs/tasks/phase-0-foundations.md`).
 - In parallel, ask IT for read-only access needed by Phase 1 (see Blockers).
 
 **Blockers / waiting on**
