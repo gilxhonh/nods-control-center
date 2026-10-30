@@ -5,6 +5,7 @@ Update the "Latest" section at the end of every session. Move the previous one i
 ## Latest (2026-10-19)
 
 **Done**
+- Claude Code tooling in `.claude/`: `ncc-reviewer` agent (read-only review against the hard rules), `start-task` and `finish-task` skills. `.claude/worktrees/` and `settings.local.json` are now ignored.
 - Node 26 LTS (26.13.0): `.nvmrc`, `engines`, `@types/node` ^26.6.5, docs. Lint, build, typecheck and test pass on Node 26.
   Node 26 no longer bundles Corepack: run `npm install -g corepack && corepack enable` once.
 - Monorepo scaffolded (web, api, worker, shared, db, sources), CI, Docker Postgres, ADR 0001.
