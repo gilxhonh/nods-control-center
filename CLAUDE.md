@@ -33,6 +33,7 @@ pnpm 12 + Turborepo, Node 26 LTS, TypeScript 6 (not 7 until the Nest CLI support
 - A task is done when its acceptance criteria pass, `pnpm lint build typecheck test` is green, and `docs/tasks` + `docs/HANDOFF.md` are updated.
 
 ## End of every session
+`/start-task NCC-xxx` begins a task; `/finish-task` runs the steps below plus the `ncc-reviewer` agent and opens the PR into `develop`.
 1. Tick finished tasks in `docs/tasks/*.md` (status column).
 2. Rewrite the top of `docs/HANDOFF.md`: done, in progress, next, blockers, decisions.
 3. Commit.
