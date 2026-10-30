@@ -1,6 +1,9 @@
 # Tasks
 
-One file per phase. Status: `todo`, `doing`, `done`, `blocked`. Pick the lowest-numbered `todo` task whose dependencies are `done`.
+One file per phase: what each task is (ID, module, size, dependencies, acceptance criteria). **Status, assignee and
+priority live in Jira**, space `RDIT` (Retail Dashboard For Integration Team) at
+https://mozenda.atlassian.net/jira/software/projects/RDIT; the Jira column gives each task's key. The order of work
+comes from the current plan below.
 
 | File | Phase |
 |---|---|

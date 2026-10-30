@@ -30,10 +30,11 @@ pnpm 12 + Turborepo, Node 26 LTS, TypeScript 6 (not 7 until the Nest CLI support
 - Business rules (status, coverage, delivery projection) live in `packages/shared/src/rules` with unit tests, never inline in controllers or components.
 - Schema change = edit `packages/db/src/schema.ts`, run `pnpm db:generate`, commit the migration.
 - Branch per task from `develop`: `feat/NCC-012-domain-list`, PR back into `develop`. `main` only gets releases from `develop`; never commit to it directly. Commit messages say why, not just what.
-- A task is done when its acceptance criteria pass, `pnpm lint build typecheck test` is green, and `docs/tasks` + `docs/HANDOFF.md` are updated.
+- A task is done when its acceptance criteria pass, `pnpm lint build typecheck test` is green, its Jira ticket is moved, and `docs/HANDOFF.md` is updated.
+- Task status lives in Jira space `RDIT`; `docs/tasks/*.md` holds definitions and each task's RDIT key. Commit messages and PR titles name both (`NCC-005 / RDIT-5`). This repo never calls Jira.
 
 ## End of every session
 `/start-task NCC-xxx` begins a task; `/finish-task` runs the steps below plus the `ncc-reviewer` agent and opens the PR into `develop`.
-1. Tick finished tasks in `docs/tasks/*.md` (status column).
+1. Tell the user which RDIT tickets to move (In Progress, Done, or a `blocked` label).
 2. Rewrite the top of `docs/HANDOFF.md`: done, in progress, next, blockers, decisions.
 3. Commit.

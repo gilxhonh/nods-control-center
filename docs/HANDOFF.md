@@ -12,21 +12,28 @@ Update the "Latest" section at the end of every session. Move the previous one i
 - Claude Code tooling in `.claude/`: `ncc-reviewer` agent (read-only review against the hard rules), `start-task` and `finish-task` skills. `.claude/worktrees/` and `settings.local.json` are now ignored.
 - `.gitattributes` checks out text files with LF, so `pnpm lint` passes on Windows. Existing checkouts: run
   `git rm -r --cached -q . && git reset --hard` once on a clean tree.
+- Jira space `RDIT` holds the whole backlog: RDIT-1..47 are the 47 NCC tasks (key per task in the Jira column of
+  `docs/tasks/*.md`), RDIT-48..56 are DEC-01..09. All unassigned; RDIT-2 (NCC-001) Done, RDIT-8 (NCC-002) In Progress.
 
 **In progress**
-- Nothing.
+- NCC-002 / RDIT-8: PR #6 open. Move RDIT-8 to Done when it merges.
 
 **Next**
 - Two-week plan, Mon 2 to Fri 13 Nov (deadline from Olsi): a working end-to-end slice, real retail Domains from
   `e3-delivery-data` behind a dev login. Day-by-day schedule and the decisions Olsi owns (DEC-01..09) are in
   `docs/tasks/plan-2026-11-13.md`; work is tracked in Jira space `RDIT`.
 
+  First on Mon 2 Nov: send the DEC tasks to Olsi (they are unassigned; assign RDIT-48..56 to him in Jira or raise them
+  in person), then NCC-003 / RDIT-6.
+
 **Blockers / waiting on**
-- Unchanged from 2026-10-19 below (source access, hosting, Entra ID app registration).
+- Unchanged from 2026-10-19 below (source access, hosting, Entra ID app registration), now tracked as DEC-02..04.
 
 **Decisions**
 - Nest's `abortOnError` is off in both `main.ts` files so startup errors exit with code 1, not `process.abort()`.
 - `parseEnv` is tested from `apps/api/src/env.spec.ts` until NCC-011 gives `packages/shared` its own Vitest.
+- **Status lives in Jira (`RDIT`), definitions in the repo.** The task tables' Status column became a Jira column.
+  Claude Code does not read Jira; the skills tell the user which ticket to move. See ROADMAP "Working method".
 
 ## History
 
