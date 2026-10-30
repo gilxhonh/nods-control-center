@@ -9,6 +9,9 @@ Update the "Latest" section at the end of every session. Move the previous one i
   `ConfigModule.forRoot({ validate })`). A missing or bad variable prints "Invalid environment:" with one
   line per variable and exits 1. Schemas only cover what each app reads today (api: `DATABASE_URL`,
   `API_PORT`, `WEB_ORIGIN`; worker: `DATABASE_URL`). The worker now refuses to start without a database.
+- Claude Code tooling in `.claude/`: `ncc-reviewer` agent (read-only review against the hard rules), `start-task` and `finish-task` skills. `.claude/worktrees/` and `settings.local.json` are now ignored.
+- `.gitattributes` checks out text files with LF, so `pnpm lint` passes on Windows. Existing checkouts: run
+  `git rm -r --cached -q . && git reset --hard` once on a clean tree.
 
 **In progress**
 - Nothing.
@@ -18,8 +21,6 @@ Update the "Latest" section at the end of every session. Move the previous one i
 
 **Blockers / waiting on**
 - Unchanged from 2026-10-19 below (source access, hosting, Entra ID app registration).
-- `pnpm lint` fails on Windows checkouts: biome flags CRLF line endings in ~60 files (`core.autocrlf=true`).
-  Needs a `.gitattributes` (`* text=auto eol=lf`) or biome `lineEnding` setting; not done here.
 
 **Decisions**
 - Nest's `abortOnError` is off in both `main.ts` files so startup errors exit with code 1, not `process.abort()`.
@@ -30,7 +31,6 @@ Update the "Latest" section at the end of every session. Move the previous one i
 ### 2026-10-19
 
 **Done**
-- Claude Code tooling in `.claude/`: `ncc-reviewer` agent (read-only review against the hard rules), `start-task` and `finish-task` skills. `.claude/worktrees/` and `settings.local.json` are now ignored.
 - Node 26 LTS (26.13.0): `.nvmrc`, `engines`, `@types/node` ^26.6.5, docs. Lint, build, typecheck and test pass on Node 26.
   Node 26 no longer bundles Corepack: run `npm install -g corepack && corepack enable` once.
 - Monorepo scaffolded (web, api, worker, shared, db, sources), CI, Docker Postgres, ADR 0001.
