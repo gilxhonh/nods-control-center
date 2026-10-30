@@ -18,7 +18,7 @@ It is an internal tool that will grow module by module (domains, runs, deliverie
 - **Read-only access** to the existing master request database (read-only user, plus read-only sessions enforced in code) and to Mozenda, Jira and Slack APIs.
 - **Frontend: React + Vite** with TanStack Router, Query and Table, Tailwind CSS and shadcn/ui, Recharts for charts. No server rendering: the app sits behind a login.
 - **Validation: zod**, shared between frontend and API through `@ncc/shared`.
-- **Auth: company sign-in over OIDC**, with role and client-segment scoping enforced in API guards.
+- **Auth: company sign-in with Microsoft SSO (Entra ID) over OIDC**, with role and client-segment scoping enforced in API guards.
 - **Tooling:** Biome (lint + format), Vitest, GitHub Actions. Observability through Prometheus metrics into the existing Grafana, plus Sentry.
 - **Node 26 LTS.** Switched from Node 24 on 30 Oct 2026, two days after 26 entered LTS; Node 24 went to maintenance on 20 Oct 2026.
 - **Latest stable dependencies with a 2-day buffer:** pnpm's `minimumReleaseAge` only accepts versions published at least 2 days ago.
@@ -29,4 +29,4 @@ It is an internal tool that will grow module by module (domains, runs, deliverie
 - One language and one set of types end to end; less duplication between UI and API.
 - NestJS adds some boilerplate but keeps a growing codebase consistent.
 - Source systems stay untouched: anything we need to keep (history, alerts) is snapshotted into our own database by the worker.
-- Hosting, SSO provider and API credentials still need confirmation from IT.
+- Hosting, the Entra ID app registration and API credentials still need confirmation from IT.

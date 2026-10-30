@@ -285,7 +285,7 @@ Azimuth...), so client → Jira project is many-to-one at best.
 4. `wdcintegration.mozenda.com/nods/public_assignees` returned **403 Forbidden (nginx)** from outside
    the corporate network. NODS is network-restricted, so (a) reading NODS requires being inside the E3
    network — another reason the app must live on that VM — and (b) local dev against NODS needs VPN.
-5. No SSO provider is named anywhere found. Still a genuine blocker.
+5. No SSO provider is named anywhere found. (Answered later: Microsoft SSO / Entra ID, see section 8.)
 
 ---
 
@@ -349,7 +349,8 @@ table should be rewritten to this.
 2. Which of Store Postgres / e3-delivery / Snowflake is "the master request DB" as used in `CLAUDE.md`?
 3. Is `Tech Lead` a distinct role, and do Product Linking Analysts need a view here?
 4. Does a single domain ever serve clients in more than one business line? (section 6)
-5. SSO provider — nothing found.
+5. ~~SSO provider — nothing found.~~
+   **Answered 2026-10-30: Microsoft SSO (Entra ID)**, per the team. IT still has to confirm it and register the app.
 6. Is 15 GB enough given run-snapshot retention? (section 5)
 
 ## 9. Sources

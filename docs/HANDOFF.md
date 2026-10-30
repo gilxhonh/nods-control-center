@@ -22,7 +22,9 @@ Update the "Latest" section at the end of every session. Move the previous one i
 **Blockers / waiting on**
 - Read-only DB user for the master request database.
 - Mozenda API key, Jira API token (OPS project), Slack bot token.
-- Hosting target and SSO provider.
+- Hosting target.
+- Sign-in is Microsoft SSO (Entra ID), per the team. IT still has to confirm it and register the app
+  (client ID, secret, tenant, redirect URL).
 
 **Research**
 - `docs/research/2026-10-30-org-segments-and-sources.md` — org chart, business lines, retail domain

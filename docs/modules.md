@@ -8,7 +8,7 @@ Revised 2026-10-30 from `docs/research/2026-10-30-org-segments-and-sources.md`. 
 
 | Module | Owns (tables) | Reads from | Main screens | Phase |
 |---|---|---|---|---|
-| `auth` | sessions | SSO (OIDC) | Login | 0, 11 |
+| `auth` | sessions | Microsoft Entra ID (OIDC) | Login | 0, 11 |
 | `users` | users, teams | | Team, Settings | 0 |
 | `clients` | clients (business_line, v1 filters to `retail`) | source systems | Clients, Client detail | 2 |
 | `domains` | domains, domain_config | source systems, NODS config | Domains, Domain detail | 2 |
