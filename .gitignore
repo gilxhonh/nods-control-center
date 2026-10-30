@@ -8,3 +8,5 @@ coverage/
 !.env.example
 .DS_Store
 graphify-out/
+.claude/worktrees/
+.claude/settings.local.json
