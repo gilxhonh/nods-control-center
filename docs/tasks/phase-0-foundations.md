@@ -4,7 +4,7 @@ Goal: a solid base so every feature after this is just a module.
 
 | ID | Task | Module | Size | Depends on | Status |
 |---|---|---|---|---|---|
-| NCC-001 | Validate env at startup with zod (api, worker), fail fast with a clear message | shared | S | | todo |
+| NCC-001 | Validate env at startup with zod (api, worker), fail fast with a clear message | shared | S | | done |
 | NCC-002 | Structured logging (pino via Fastify), request IDs, redact secrets | api | S | | todo |
 | NCC-003 | Global error filter: consistent error shape `{ code, message, details }` | api | S | | todo |
 | NCC-004 | Move api code to `src/modules/*` layout from `docs/modules.md`; add `users`, `audit` modules | api | S | | todo |
