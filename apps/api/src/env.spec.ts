@@ -1,7 +1,7 @@
 import { apiEnvSchema, parseEnv } from '@ncc/shared'
 import { describe, expect, it } from 'vitest'
 
-// shortcut: parseEnv lives in packages/shared but is tested here until NCC-011 gives shared its own Vitest setup.
+// shortcut: parseEnv lives in packages/shared but is tested here until RDIT-11 gives shared its own Vitest setup.
 describe('parseEnv(apiEnvSchema)', () => {
   it('names a missing variable', () => {
     expect(() => parseEnv(apiEnvSchema, {})).toThrow('DATABASE_URL is required')

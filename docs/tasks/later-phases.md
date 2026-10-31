@@ -1,6 +1,6 @@
 # Phases 5 to 12 (epics)
 
-Break each epic into NCC tasks when the phase starts.
+Break each epic into tasks (new RDIT tickets) when the phase starts.
 
 - **5. Tickets:** Jira sync into ticket_snapshots; link tickets to domain/run/store; root-cause taxonomy; Tickets page with filters; Weekly report (requests on time vs with ticket, root causes, client summary); Slack activity on Domain detail.
 - **6. Writes:** Baseline change flow (whole domain or specific stores, required ticket, two-step confirm, request flow for engineers); assignments and reassignment with handover note; activity timelines from audit_log.

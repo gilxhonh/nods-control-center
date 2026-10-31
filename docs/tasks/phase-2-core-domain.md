@@ -1,16 +1,16 @@
 # Phase 2: Clients, domains, assignments
 
-| ID | Task | Module | Size | Depends on | Status |
-|---|---|---|---|---|---|
-| NCC-201 | Schema: add domain_config (banner ID, cadence, window, config_ident, bot IDs, Mozenda account, feasibility) | db | S | NCC-102 | todo |
-| NCC-202 | Worker job `sync-master-requests`: upsert clients (with segment), domains, config | worker | M | NCC-201 | todo |
-| NCC-203 | `clients` module: list + detail endpoints, scoped by role/segment | api | M | NCC-006, NCC-202 | todo |
-| NCC-204 | `domains` module: list with filters (client, engineer, type, window), detail endpoint | api | M | NCC-006, NCC-202 | todo |
-| NCC-205 | `assignments` module: current owner + history; import current assignees from NODS export | api | M | NCC-204 | todo |
-| NCC-206 | Web: Domains page (table, filters, search) per prototype | web | M | NCC-204, NCC-010 | todo |
-| NCC-207 | Web: Domain detail header, metadata strip, crawl configuration card | web | M | NCC-204 | todo |
-| NCC-208 | Web: Clients list and Client detail (domains table, health placeholder) | web | M | NCC-203 | todo |
-| NCC-209 | Global search (domain, client, config ident, banner ID) | api, web | S | NCC-204 | todo |
+| ID | Task | Module | Size | Depends on |
+|---|---|---|---|---|
+| RDIT-21 | Schema: add domain_config (banner ID, cadence, window, config_ident, bot IDs, Mozenda account, feasibility) | db | S | RDIT-14 |
+| RDIT-22 | Worker job `sync-master-requests`: upsert clients (with segment), domains, config | worker | M | RDIT-21 |
+| RDIT-23 | `clients` module: list + detail endpoints, scoped by role/segment | api | M | RDIT-7, RDIT-22 |
+| RDIT-24 | `domains` module: list with filters (client, engineer, type, window), detail endpoint | api | M | RDIT-7, RDIT-22 |
+| RDIT-25 | `assignments` module: current owner + history; import current assignees from NODS export | api | M | RDIT-24 |
+| RDIT-26 | Web: Domains page (table, filters, search) per prototype | web | M | RDIT-24, RDIT-9 |
+| RDIT-27 | Web: Domain detail header, metadata strip, crawl configuration card | web | M | RDIT-24 |
+| RDIT-28 | Web: Clients list and Client detail (domains table, health placeholder) | web | M | RDIT-23 |
+| RDIT-29 | Global search (domain, client, config ident, banner ID) | api, web | S | RDIT-24 |
 
 ## Acceptance criteria
 - For 20 sample domains, banner ID, window, cadence, type, assignee and config ident match NODS.
