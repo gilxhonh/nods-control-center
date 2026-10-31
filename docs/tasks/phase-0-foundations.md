@@ -19,6 +19,7 @@ Goal: a solid base so every feature after this is just a module.
 
 ## Acceptance criteria
 - **RDIT-2:** Missing `DATABASE_URL` stops the api with "DATABASE_URL is required" and exit code 1.
+- **RDIT-8:** Api logs are pino JSON, Nest `Logger` included. Each request reuses a valid `x-request-id` or gets a UUID, returns it in `x-request-id` and carries it as `reqId` on every line logged during the request. Secrets (auth/cookie headers, password/token/secret/api key fields, up to four levels deep) log as `[Redacted]`. Covered by `apps/api/src/common/logging.spec.ts`.
 - **RDIT-5, RDIT-7:** A CSM user calling `GET /api/domains` only gets domains of their clients; a request for another segment returns 403. Covered by e2e tests.
 - **RDIT-3:** `pnpm db:seed` is idempotent and creates at least one user per role and clients in both segments.
 - **RDIT-9:** Switching the logged-in user changes the pinned nav like the prototype's role switcher.
