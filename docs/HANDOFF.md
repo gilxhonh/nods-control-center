@@ -5,6 +5,9 @@ Update the "Latest" section at the end of every session. Move the previous one i
 ## Latest (2026-10-30)
 
 **Done**
+- NCC-002: api logs are pino JSON through Fastify, Nest's `Logger` included (`apps/api/src/common/logging.ts`).
+  Request ids: a valid `x-request-id` is reused, else a UUID; returned in the response header and tagged as
+  `reqId` on every line logged during the request (AsyncLocalStorage). Secrets are redacted by key name.
 - NCC-001: api and worker validate env at startup with zod (`packages/shared/src/env.ts`, wired through
   `ConfigModule.forRoot({ validate })`). A missing or bad variable prints "Invalid environment:" with one
   line per variable and exits 1. Schemas only cover what each app reads today (api: `DATABASE_URL`,
@@ -17,7 +20,9 @@ Update the "Latest" section at the end of every session. Move the previous one i
 - Nothing.
 
 **Next**
-- NCC-002 (logging), NCC-003 (error filter), NCC-004 (modules layout); see `docs/tasks/phase-0-foundations.md`.
+- NCC-003 (error filter), NCC-004 (modules layout); see `docs/tasks/phase-0-foundations.md`.
+  NCC-003 can log through Nest's `Logger` and get `reqId` for free; consider returning the request id in the error body
+  and adding `exposedHeaders: ['x-request-id']` to CORS so the web app can show it.
 
 **Blockers / waiting on**
 - Unchanged from 2026-10-19 below (source access, hosting, Entra ID app registration).
@@ -25,6 +30,11 @@ Update the "Latest" section at the end of every session. Move the previous one i
 **Decisions**
 - Nest's `abortOnError` is off in both `main.ts` files so startup errors exit with code 1, not `process.abort()`.
 - `parseEnv` is tested from `apps/api/src/env.spec.ts` until NCC-011 gives `packages/shared` its own Vitest.
+- Logging uses Fastify's own pino plus a ~30-line Nest `LoggerService` adapter instead of `nestjs-pino` (no new dependency).
+- Redaction is by exact key name (pino can't match case-insensitively or by pattern). New secret field names must be added to
+  `SECRET_KEYS`, and secrets inside free-text messages (e.g. a connection string in an error message) are not caught.
+- A fatal startup failure (before the logger is attached) still prints plain text and exits 1; everything after is JSON.
+- Worker logging is unchanged (Nest console logger); give it pino when it does real work.
 
 ## History
 

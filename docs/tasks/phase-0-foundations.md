@@ -5,7 +5,7 @@ Goal: a solid base so every feature after this is just a module.
 | ID | Task | Module | Size | Depends on | Status |
 |---|---|---|---|---|---|
 | NCC-001 | Validate env at startup with zod (api, worker), fail fast with a clear message | shared | S | | done |
-| NCC-002 | Structured logging (pino via Fastify), request IDs, redact secrets | api | S | | todo |
+| NCC-002 | Structured logging (pino via Fastify), request IDs, redact secrets | api | S | | done |
 | NCC-003 | Global error filter: consistent error shape `{ code, message, details }` | api | S | | todo |
 | NCC-004 | Move api code to `src/modules/*` layout from `docs/modules.md`; add `users`, `audit` modules | api | S | | todo |
 | NCC-005 | Dev auth: login as a seeded user, session cookie; `@CurrentUser()` decorator | auth | M | NCC-004 | todo |
@@ -19,6 +19,7 @@ Goal: a solid base so every feature after this is just a module.
 
 ## Acceptance criteria
 - **NCC-001:** Missing `DATABASE_URL` stops the api with "DATABASE_URL is required" and exit code 1.
+- **NCC-002:** Api logs are pino JSON, Nest `Logger` included. Each request reuses a valid `x-request-id` or gets a UUID, returns it in `x-request-id` and carries it as `reqId` on every line logged during the request. Secrets (auth/cookie headers, password/token/secret/api key fields, up to four levels deep) log as `[Redacted]`. Covered by `apps/api/src/common/logging.spec.ts`.
 - **NCC-005/006:** A CSM user calling `GET /api/domains` only gets domains of their clients; a request for another segment returns 403. Covered by e2e tests.
 - **NCC-008:** `pnpm db:seed` is idempotent and creates at least one user per role and clients in both segments.
 - **NCC-010:** Switching the logged-in user changes the pinned nav like the prototype's role switcher.
